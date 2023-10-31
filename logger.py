@@ -61,7 +61,7 @@ def remove_logs(logDir:str, threshold:dict, *args, verbose, **kwargs) -> None:
     is defined by the threshold. This is because the logfiles are created during the test.
     NOTE: if sts.warningTolerance is set to value != 1 then warnings will always appear
     """
-    for i, file in enumerate(sorted(os.listdir(logDir), reverse=False)):
+    for i, file in enumerate(sorted(os.listdir(logDir), reverse=True)):
         if verbose: print(f"file {i}: {file}")
         if file.endswith(".log"):
             file = os.path.join(logDir, file)

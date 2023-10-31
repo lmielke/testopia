@@ -15,24 +15,31 @@ All test results will be displayed within the Sublime console.
 
 ## Installation and Setup
 Before install check your Sublime and Project specification! (see Environment header below!)
+### Environment
+- Sublime Text 4
+- currently only Pipenv environments are supported
+- requires a biased development setup with a test foder within your project directory
 
-- cd ~\AppData\Roaming\Sublime Text\Packages && git clone git@github.com:lmielke/testopia.git
-- mv .\testopia.sublime-build ../User
-
+### manual install
 - clone this repo into your Sublime Text 4 packages i.e. (~/AppData/Roaming/Sublime Text/Packages/) or download the zip file and unpack it into
 - copy the testopia.sublime-build file into /Packages/User folder and adjust it to your needs
 - make sure all variant parameters within the testopia.sublime-build file are set to your project specifications
 - select testopia as build system for your project (Tools->Build System->testopia)
 
+### shell code snippet for Windows
+
+```shell
+    cd "~\AppData\Roaming\Sublime Text\Packages"
+    git clone git@github.com:lmielke/testopia.git
+    mv .\testopia\testopia.sublime-build ./User
+```
+### after install
+- in Sublime: Tools >> Build System >> testopia
+
 ## Logging and Reporting
 Testopia will create a test/testopia_logs/ folder within your test folder. This log folder will contain all test logs and will be updated with each test run. A new log file will be created each time you restart Sublime Text. You can limit the life time of your logfiles by adjusting the logPreserveThreshold within your testopia.sublime-build file. The default is set to 10, meaning that by default only the last 10 log files will be preserved.
 Currently there is no Reporting implemented in Testopia. This is a feature that might be added in the future.
 
-
-## Environment
-- Sublime Text 4
-- currently only Pipenv environments are supported
-- requires a biased development setup with a test foder within your project directory 
 
 ## Issues
 - in some cases the logfile from a previous test might not have been properly closed. In that case, save your work. Then close and reopen 'Sublime Text'. This will release the log. You can also increase the threshold for log preservation within the testopia.sublime-build file so it will not be deleted during
