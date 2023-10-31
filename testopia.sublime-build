@@ -27,7 +27,7 @@
             "cleanup":true,
             "logPreserveThreshold": {
                 "days": 10,
-                "count": 10
+                "count": 100
             },
             // needed to find the executable to run the tests
             "execsDir": "~/.virtualenvs",
@@ -37,7 +37,7 @@
             // needed call UnitTest as subprocess call
             "testClass": "UnitTest",
             // used to get all functions out of module i.e. def connect(*args, **kwargs)
-            "func_regex": "(?:def\\s)([a-z_0-9]*)([(])",
+            "func_regex": "(def\\s)([A-Za-z_0-9]*)(.*[)])(?:[ ->]*)(.*)(?=:\\s*$)",
             // needed to find test function, default is test_file.py/test_func()
             "testFuncPrefix": "test_",
         }
