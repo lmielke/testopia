@@ -16,8 +16,7 @@ All test results will be displayed within the Sublime console.
 ## Installation and Setup
 Before install check your Sublime and Project specification! (see Environment header below!)
 
-- cd ~\AppData\Roaming\Sublime Text\Packages
-- git clone git@github.com:lmielke/testopia.git
+- cd ~\AppData\Roaming\Sublime Text\Packages && git clone git@github.com:lmielke/testopia.git
 - mv .\testopia.sublime-build ../User
 
 - clone this repo into your Sublime Text 4 packages i.e. (~/AppData/Roaming/Sublime Text/Packages/) or download the zip file and unpack it into
