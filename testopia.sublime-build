@@ -1,0 +1,45 @@
+// testopia.sublime-build
+// copy this file to ~/AppData/Roaming/Sublime Text/Packages/User
+// adjust the variable to your individual package structure
+
+{
+    "file_patterns": ["*.py"],
+    "keyfiles": ["__init__.py", "__main__.py", "test_.*.py"],
+    "target": "unit_test_build",
+    "selector": "source.python",
+    "cancel": {"kill": true},
+    "file_regex": "^\\s*File \"(...*?)\", line ([0-9]*)",
+    
+    "variants": [
+        {
+            "name": "Unit Test",
+            "prcName": "Sublime UnitTest - Build",
+            // used when test is run from the package module directly
+            // needed to find test_file.py, default is packagedir/test/test_file.py
+            "testDirName": "test",
+            "testFilePrefix": "test_",
+            // needed to find test logging directory, default is packagedir/test/testopia_logs
+            "logDirName": "testopia_logs",
+            // when searching for /test/test_file.py will ignore these directories
+            "ignoreDirs": ["__pycache__", ".venv"],
+            "numSearchLevels": 2,
+            // logs acumulate and might have to be cleaned up every so often
+            "cleanup":true,
+            "logPreserveThreshold": {
+                "days": 10,
+                "count": 10
+            },
+            // needed to find the executable to run the tests
+            "execsDir": "~/.virtualenvs",
+            // activates printing to command window, use Ctrl+. to view
+            "verbose": false,
+            // needed to run the module and test module
+            // needed call UnitTest as subprocess call
+            "testClass": "UnitTest",
+            // used to get all functions out of module i.e. def connect(*args, **kwargs)
+            "func_regex": "(?:def\\s)([a-z_0-9]*)([(])",
+            // needed to find test function, default is test_file.py/test_func()
+            "testFuncPrefix": "test_",
+        }
+    ]
+}
