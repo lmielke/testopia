@@ -11,12 +11,12 @@ Then, to test:
 3. place your cursor <i>in multiple classes/methods</i> and press <b>Ctrl+b</b> to test those classes/methods simultaneously
 4. <i>select a region</i> of your code and press <b>Ctrl+b</b> to test only classes/methods within that region
 ## Is it useful to you
-Testopia assumes and supports a TDD (test driven) or TSD (test syncronous) continuous delivery approcach. It requires you to adhere to the folowing principles:
+Testopia assumes and facilitates a TDD (test driven) or TSD (test syncronous) continuous delivery approcach. It requires you to adhere to the folowing principles:
 
 - Object oriented programming (<b>classes, methods</b>) in your <b>/package/module.py</b> file
 - Object oriented Unitest(<b>unittest.TestCase</b>) setup using a <b>/test/test_module.py</b> file
 
-Also Testopia is currently limited to some by some technical choices you make.
+Also Testopia is currently limited to some technical choices you make.
 
 - Sublime Text 4 (test results will be displayed within the Sublime Console)
 - <b>Pipienv</b> environments
