@@ -70,7 +70,7 @@ class Testopia:
                 adjusted.add(f"{testClassName}.{funcName}")
                 # remove that function from testFuncs set
                 testFuncs.remove(genericName)
-            return adjusted | testFuncs
+        return adjusted | testFuncs
 
     def _find_cls_index(self, start, end, text, *args, testClassPrefix, testFilePrefix, **kwargs):
         funcName = testFilePrefix + text.strip().split('(')[0].strip().split(' ')[-1]
@@ -265,6 +265,7 @@ class TestExecutable:
         runs the test using subprocess.Popen
         """
         # run test cmds
+        print(f"testFuncs: {testFuncs}")
         return (subprocess.Popen(
                     ['echo', 'Testopia ERROR:'] \
                                         if kill or self.kill \
