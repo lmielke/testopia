@@ -5,29 +5,31 @@ import datetime as dt
 from difflib import SequenceMatcher
 import os, re, sys, time
 import subprocess
+from collections import defaultdict
 
 # used to find all methods/functions in a file
-funcRegex = r"(def\s+)([A-Za-z_0-9]*)(.*[)])(?:[ ->]*)(.*)(?=:\s*$)"
-classRegex = r'class [a-z_A-Z0-9]*'
+funcRegex = r"(def\s+)([A-Za-z_0-9]*)(.*[)])(?:[ ->]*)(.*)(?=:\s*)"
+classRegex = r'(?:class\s*)([a-z_A-Z0-9]*)'
 
 class Testopia:
 
     def __init__(self, vars, *args, **kwargs):
         self.kill = False
         self.vars = vars
-        self.msg = []
+        self.msg, self.missing, self.testMethod = [], set(), set()
         self.timeStamp = re.sub(r"([:. ])", r"-" , str(dt.datetime.now()))
         self.executable = TestExecutable(self.vars.get('folder'), *args, **kwargs)
         self.paths = FilePaths(self.msg, self.timeStamp, *args, **self.vars, **kwargs)
-        self.get_test_files(*args, **kwargs)
 
     def get_test_files(self, *args, **kwargs):
         with open(self.vars['file'], 'r') as f:
             self.moduleText = f.read()
         with open(self.paths.testFilePath, 'r') as f:
             self.testModuleText = f.read()
+        self.classes = self.get_methods(self.moduleText, *args, **kwargs)
 
     def run_test(self, *args, verbose, **kwargs):
+        self.get_test_files(*args, **kwargs)
         if verbose: print(f"\n\nNEXT Test: {self.vars}")
         # run the tests
         return self.executable.run_subprocess(
@@ -38,6 +40,47 @@ class Testopia:
                                         *args,
                                         **kwargs
                 )
+
+    def get_methods(self, text, *args, defaultTestClassName, **kwargs):
+        """
+        returns a dictionary of classes and methods within the module file
+        """
+        methods, position, clName, testClName = dict(), 0, None, ''
+        for line in text.split('\n'):
+            if 'class ' in line or 'def ' in line:
+                mMatch = re.search(funcRegex, line)
+                if mMatch:
+                    mName = mMatch.group(2)
+                    funcStart = [p.start() for p in re.finditer(mName, line)][0] + position
+                    methods[funcStart] = self.find_matching_test(
+                                                                    clName,
+                                                                    mName,
+                                                                    testClName,
+                                                                    *args, **kwargs
+                                        )
+                else:
+                    clMatch = re.search(classRegex, line)
+                    if clMatch:
+                        clName = clMatch.group(1)
+            position += (len(line) + 1)
+        return methods
+
+    def find_matching_test(self, clName, mName, testClName, *args,
+                                testFuncPrefix, testClassPrefix, **kwargs):
+        if self.paths.runFromPackageFile:
+            if re.search(testClName, self.testModuleText) is None:
+                self.missing.add(clName)
+                testClName = None
+                testMName = None
+            else:
+                testClName = f"{testClassPrefix}{clName}"
+                testMName = f"{testFuncPrefix}{mName}"
+        else:
+            clName = clName.replace(testClassPrefix, '')
+            mName = mName.replace(testFuncPrefix, '')
+            testClName = f"{testClassPrefix}{clName}"
+            testMName = f"{testFuncPrefix}{mName}"
+        return clName, mName, testClName, testMName
 
     def check_dir_exists(self, dirName, *args, **kwargs):
         logDir = os.path.join(self.paths.testDir, dirName)
@@ -50,41 +93,33 @@ class Testopia:
         finds the test functions within the test file and returns it
         if no test functions are found, the function finds the nearest definition above
         """
-        testFuncs = self.find_func_def(*args, **kwargs)
+        testMethod = self.find_func_def(*args, **kwargs)
         # if no functions were found in selections, find the nearest function definition above
-        if not testFuncs and level == 0:
+        if not testMethod and level == 0:
             self.find_nearest_func_def(*args, **kwargs)
-            testFuncs = self.find_func_def(level+1, *args, **kwargs)
+            testMethod = self.find_func_def(level+1, *args, **kwargs)
         if level == 0:
-            log.info(f"\n\n funcs: {testFuncs if testFuncs else 'all (no matches found)'}\n")
-        testFuncs = self.find_class_name(testFuncs, *args, **kwargs)
-        return testFuncs
+            log.info(f"\n\nfuncs: {testMethod if testMethod else 'all (no matches found)'}\n")
+        # testMethod = self.find_class_name(testMethod, *args, **kwargs)
+        self.testMethod = {f"{self.classes[ix][2]}.{self.classes[ix][3]}" \
+                                                                for func, ix in testMethod}
+        if verbose: print(f"self.testMethod: {self.testMethod}")
+        return self.testMethod
 
-    def find_class_name(self, testFuncs, *args, defaultTestClassName, **kwargs):
-        adjusted = set()
-        for (start, end), text in self.vars['selectionTexts'].items():
-            if not text.strip().startswith('def'): continue
-            testClassName, funcName = self._find_cls_index(start, end, text, *args, **kwargs)
-            genericName = f"{defaultTestClassName}.{funcName}"
-            if genericName in testFuncs and testClassName in self.testModuleText:
-                adjusted.add(f"{testClassName}.{funcName}")
-                # remove that function from testFuncs set
-                testFuncs.remove(genericName)
-        return adjusted | testFuncs
-
-    def _find_cls_index(self, start, end, text, *args, testClassPrefix, testFilePrefix, **kwargs):
-        funcName = testFilePrefix + text.strip().split('(')[0].strip().split(' ')[-1]
+    def _find_cls_index(self, start, end, text, *args, testClassPrefix, testFilePrefix, 
+                                                                                    **kwargs):
+        mName = testFilePrefix + text.strip().split('(')[0].strip().split(' ')[-1]
         # find all indexes for 'def ' strings within self.moduleText
         ixs = [(m.start(), m.end()) for m in re.finditer(classRegex, self.moduleText)]
-        # find the index of the last 'def ' string before the cursor position
+        # find the index of the last 'class ' string before the cursor position
         nearest = max([i[0] for i in ixs if i[0] < start])
         n = (nearest, nearest + ixs[1][1] - ixs[1][0])
         # select the entire line from self.moduleText that matches nearest index value
-        testClassName = (
+        testClName = (
                         f"{testClassPrefix}"
                         f"{self.moduleText[slice(n[0], n[1])].strip().split(' ')[-1]}"
                         )
-        return testClassName, funcName
+        return testClName, mName
 
 
 
@@ -96,16 +131,17 @@ class Testopia:
                     which exist in both package.py and test_package.py files
             NOTE: if cursor is positioned inside a function, only this function is returned
         """
-        testFuncs = set()
-        # find all functions within selections and add them to testFuncs like test_found_func
+        testMethod = set()
+        # find all functions within selections and add them to testMethod like test_found_func
         for i, sel in enumerate(self.vars['selectionTexts'].values()):
-            for match in re.findall(funcRegex, sel.strip()):
-                m = match[1]
-                testFuncs.add(
-                    f"{defaultTestClassName}."
-                    f"{m if m.startswith(testFuncPrefix) else testFuncPrefix + m}"
-                )
-        return testFuncs
+            selPos = self.moduleText.find(sel)
+            for match in re.findall(funcRegex, sel):
+                longMatch = ''.join(match[:2])
+                mPos = [p.start() for p in re.finditer(longMatch, sel)][0] + len(match[0])
+                m = ''.join(match[1])
+                testMethod.add((m if m.startswith(testFuncPrefix) \
+                                                else testFuncPrefix + m, mPos + selPos))
+        return testMethod
 
     def find_nearest_func_def(self, *args, **kwargs):
         """
@@ -260,16 +296,15 @@ class TestExecutable:
             self.kill = True
         return False
 
-    def run_subprocess(self, packageDir, testFuncs, paths, kill, *args, **kwargs):
+    def run_subprocess(self, packageDir, testMethod, paths, kill, *args, **kwargs):
         """
         runs the test using subprocess.Popen
         """
         # run test cmds
-        print(f"testFuncs: {testFuncs}")
         return (subprocess.Popen(
                     ['echo', 'Testopia ERROR:'] \
                                         if kill or self.kill \
-                                        else [self.source, paths.testFilePath, *testFuncs],
+                                        else [self.source, paths.testFilePath, *testMethod],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
                     cwd=packageDir,
