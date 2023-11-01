@@ -6,7 +6,9 @@ from difflib import SequenceMatcher
 import os, re, sys, time
 import subprocess
 
-
+# used to find all methods/functions in a file
+funcRegex = r"(def\s+)([A-Za-z_0-9]*)(.*[)])(?:[ ->]*)(.*)(?=:\s*$)"
+classRegex = r'class [a-z_A-Z0-9]*'
 
 class Testopia:
 
@@ -17,6 +19,13 @@ class Testopia:
         self.timeStamp = re.sub(r"([:. ])", r"-" , str(dt.datetime.now()))
         self.executable = TestExecutable(self.vars.get('folder'), *args, **kwargs)
         self.paths = FilePaths(self.msg, self.timeStamp, *args, **self.vars, **kwargs)
+        self.get_test_files(*args, **kwargs)
+
+    def get_test_files(self, *args, **kwargs):
+        with open(self.vars['file'], 'r') as f:
+            self.moduleText = f.read()
+        with open(self.paths.testFilePath, 'r') as f:
+            self.testModuleText = f.read()
 
     def run_test(self, *args, verbose, **kwargs):
         if verbose: print(f"\n\nNEXT Test: {self.vars}")
@@ -48,9 +57,38 @@ class Testopia:
             testFuncs = self.find_func_def(level+1, *args, **kwargs)
         if level == 0:
             log.info(f"\n\n funcs: {testFuncs if testFuncs else 'all (no matches found)'}\n")
+        testFuncs = self.find_class_name(testFuncs, *args, **kwargs)
         return testFuncs
 
-    def find_func_def(self, level=0, *args, testClass, func_regex, testFuncPrefix, **kwargs):
+    def find_class_name(self, testFuncs, *args, defaultTestClassName, **kwargs):
+        adjusted = set()
+        for (start, end), text in self.vars['selectionTexts'].items():
+            if not text.strip().startswith('def'): continue
+            testClassName, funcName = self._find_cls_index(start, end, text, *args, **kwargs)
+            genericName = f"{defaultTestClassName}.{funcName}"
+            if genericName in testFuncs and testClassName in self.testModuleText:
+                adjusted.add(f"{testClassName}.{funcName}")
+                # remove that function from testFuncs set
+                testFuncs.remove(genericName)
+            return adjusted | testFuncs
+
+    def _find_cls_index(self, start, end, text, *args, testClassPrefix, testFilePrefix, **kwargs):
+        funcName = testFilePrefix + text.strip().split('(')[0].strip().split(' ')[-1]
+        # find all indexes for 'def ' strings within self.moduleText
+        ixs = [(m.start(), m.end()) for m in re.finditer(classRegex, self.moduleText)]
+        # find the index of the last 'def ' string before the cursor position
+        nearest = max([i[0] for i in ixs if i[0] < start])
+        n = (nearest, nearest + ixs[1][1] - ixs[1][0])
+        # select the entire line from self.moduleText that matches nearest index value
+        testClassName = (
+                        f"{testClassPrefix}"
+                        f"{self.moduleText[slice(n[0], n[1])].strip().split(' ')[-1]}"
+                        )
+        return testClassName, funcName
+
+
+
+    def find_func_def(self, level=0, *args, defaultTestClassName, testFuncPrefix, **kwargs):
         """
             checks the .py file against the test_...py file and returns functions that 
             exist in both files
@@ -61,10 +99,10 @@ class Testopia:
         testFuncs = set()
         # find all functions within selections and add them to testFuncs like test_found_func
         for i, sel in enumerate(self.vars['selectionTexts'].values()):
-            for match in re.findall(func_regex, sel.strip()):
+            for match in re.findall(funcRegex, sel.strip()):
                 m = match[1]
                 testFuncs.add(
-                    f"{testClass}."
+                    f"{defaultTestClassName}."
                     f"{m if m.startswith(testFuncPrefix) else testFuncPrefix + m}"
                 )
         return testFuncs
@@ -74,19 +112,17 @@ class Testopia:
         Takes index tuples from selections and returns the nearest function definition
         located before the cursor position/selection position
         """
-        with open(self.vars['file'], 'r') as f:
-            moduleText = f.read()
         for positions in self.vars['selectionTexts'].copy().keys():
             pos = positions[0]
-            if moduleText[pos-1] == '\n':
+            if self.moduleText[pos-1] == '\n':
                 continue
-            # find all indexes for 'def ' strings within moduleText
-            ixs = [m.start() for m in re.finditer('def ', moduleText)]
+            # find all indexes for 'def ' strings within self.moduleText
+            ixs = [m.start() for m in re.finditer(f"{funcRegex[:-2]})", self.moduleText)]
             # find the index of the last 'def ' string before the cursor position
             nearest = max([i for i in ixs if i < pos])
-            # select the entire line from moduleText that matches nearest index value
-            n = (nearest, nearest + moduleText[nearest:].find('\n'))
-            self.vars['selectionTexts'].update({n: moduleText[slice(n[0], n[1])]})
+            # select the entire line from self.moduleText that matches nearest index value
+            n = (nearest, nearest + self.moduleText[nearest:].find('\n'))
+            self.vars['selectionTexts'].update({n: self.moduleText[slice(n[0], n[1])]})
 
 
 
