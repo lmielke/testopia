@@ -16,7 +16,7 @@ class Testopia:
     def __init__(self, vars, *args, **kwargs):
         self.kill = False
         self.vars = vars
-        self.msg, self.missing, self.testMethod = [], set(), set()
+        self.msg, self.missing, self.testMethods = [], set(), set()
         self.timeStamp = re.sub(r"([:. ])", r"-" , str(dt.datetime.now()))
         self.executable = TestExecutable(self.vars.get('folder'), *args, **kwargs)
         self.paths = FilePaths(self.msg, self.timeStamp, *args, **self.vars, **kwargs)
@@ -93,18 +93,21 @@ class Testopia:
         finds the test functions within the test file and returns it
         if no test functions are found, the function finds the nearest definition above
         """
-        testMethod = self.find_func_def(*args, **kwargs)
+        testMethods = self.find_func_def(*args, **kwargs)
         # if no functions were found in selections, find the nearest function definition above
-        if not testMethod and level == 0:
+        if not testMethods and level == 0:
             self.find_nearest_func_def(*args, **kwargs)
-            testMethod = self.find_func_def(level+1, *args, **kwargs)
+            testMethods = self.find_func_def(level+1, *args, **kwargs)
+        # testMethods = self.find_class_name(testMethods, *args, **kwargs)
+        self.testMethods = {f"{self.classes[ix][2]}.{self.classes[ix][3]}" \
+                                                                for func, ix in testMethods}
         if level == 0:
-            log.info(f"\n\nfuncs: {testMethod if testMethod else 'all (no matches found)'}\n")
-        # testMethod = self.find_class_name(testMethod, *args, **kwargs)
-        self.testMethod = {f"{self.classes[ix][2]}.{self.classes[ix][3]}" \
-                                                                for func, ix in testMethod}
-        if verbose: print(f"self.testMethod: {self.testMethod}")
-        return self.testMethod
+            log.info(
+                    f"\n\ntestMethods: "
+                    f"{self.testMethods if self.testMethods else 'all (no matches found)'}\n"
+                    )
+        if verbose: print(f"self.testMethods: {self.testMethods}")
+        return self.testMethods
 
     def _find_cls_index(self, start, end, text, *args, testClassPrefix, testFilePrefix, 
                                                                                     **kwargs):
@@ -131,17 +134,17 @@ class Testopia:
                     which exist in both package.py and test_package.py files
             NOTE: if cursor is positioned inside a function, only this function is returned
         """
-        testMethod = set()
-        # find all functions within selections and add them to testMethod like test_found_func
+        testMethods = set()
+        # find all functions within selections and add them to testMethods like test_found_func
         for i, sel in enumerate(self.vars['selectionTexts'].values()):
             selPos = self.moduleText.find(sel)
             for match in re.findall(funcRegex, sel):
                 longMatch = ''.join(match[:2])
                 mPos = [p.start() for p in re.finditer(longMatch, sel)][0] + len(match[0])
                 m = ''.join(match[1])
-                testMethod.add((m if m.startswith(testFuncPrefix) \
+                testMethods.add((m if m.startswith(testFuncPrefix) \
                                                 else testFuncPrefix + m, mPos + selPos))
-        return testMethod
+        return testMethods
 
     def find_nearest_func_def(self, *args, **kwargs):
         """
@@ -296,7 +299,7 @@ class TestExecutable:
             self.kill = True
         return False
 
-    def run_subprocess(self, packageDir, testMethod, paths, kill, *args, **kwargs):
+    def run_subprocess(self, packageDir, testMethods, paths, kill, *args, **kwargs):
         """
         runs the test using subprocess.Popen
         """
@@ -304,7 +307,7 @@ class TestExecutable:
         return (subprocess.Popen(
                     ['echo', 'Testopia ERROR:'] \
                                         if kill or self.kill \
-                                        else [self.source, paths.testFilePath, *testMethod],
+                                        else [self.source, paths.testFilePath, *testMethods],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
                     cwd=packageDir,
