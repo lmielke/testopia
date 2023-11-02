@@ -266,6 +266,7 @@ class FilePaths:
 
 
 class TestExecutable:
+
     def __init__(self, packageDir, *args, **kwargs):
         self.kill = False
         self.msg = []
@@ -275,13 +276,20 @@ class TestExecutable:
         self.source = 'python'
 
     def get_exec_path(self, *args, execsDir, **kwargs):
+        """
+            looks in various possible locations for the executable
+            locations can be either the package directory itself or the ouside
+            package Pipenv standard location
+        """
         executables = []
+        # first look inside the package directory
         venvFile = os.path.join(self.packageDir, '.venv')
         if os.path.exists(venvFile):
             with open(venvFile, 'r') as v:
                 executable = v.read().strip()
                 if os.path.exists(executable):
                     return executable.replace('/', os.sep)
+        # if executable exists outside of package, get it from there
         execsDir = os.path.normpath(os.path.expanduser(execsDir))
         execs = [ex for ex in os.listdir(execsDir) if ex.startswith(self.projectName)]
         if self.check_executables(execs, execsDir, *args, **kwargs):
