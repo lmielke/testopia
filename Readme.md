@@ -2,6 +2,8 @@
 
 ## What is it
 Testopia is a selection/cursor position based <b>'python unittest'</b> launcher for <b>'Sublime Text 4'</b>. It is designed to directly run python unittest from your 'Sublime Text' developing group using a single key press <b>Ctrl+b</b>. 
+
+NOTE: This tool is in alpha. Quick start: https://www.youtube.com/watch?v=hmEVR6SLkt0
 ## How to use
 While working on your class method within your python module.py file, syncronously work on your tests within your test/test_module.py file.
 
@@ -26,6 +28,7 @@ Also Testopia is currently limited to some technical choices you make.
 ## Installation and Setup
 Before install check your Sublime and Project specification! (see Environment header below!)
 ### Environment
+NOTE: This tool is in alpha, so do expect some bugs to show up! 
 - Sublime Text 4
 - currently only Pipenv environments are supported
 - requires a biased development setup with a test foder within your project directory
