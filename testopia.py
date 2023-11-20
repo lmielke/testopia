@@ -232,7 +232,8 @@ class FilePaths:
             return foundDir
         # try again from one level up
         self.ignoreDirs.add(os.path.basename(file_path))
-        foundDir = self.walklevels(os.path.basename(file), file_path, *args, **kwargs)
+        foundDir = self.walklevels(os.path.basename(file), 
+                                    os.path.dirname(file_path), *args, **kwargs)
         if os.path.isdir(foundDir):
             return foundDir
         return ''
