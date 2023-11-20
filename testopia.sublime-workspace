@@ -1,0 +1,683 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ps",
+				"ps_write_host\tps_write_host"
+			],
+			[
+				"Set",
+				"Set-Clipboard"
+			],
+			[
+				"ps_",
+				"ps_write_host\tps_write_host"
+			],
+			[
+				"ps_f",
+				"ps_loop_files_folders\tps_loop_files_folders"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "testopia.py",
+			"settings":
+			{
+				"buffer_size": 14947,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "unit_test_build.py",
+			"redo_stack":
+			[
+				[
+					10,
+					1,
+					"sort_lines",
+					{
+						"case_sensitive": false
+					},
+					"AQAAAAAAAAAAAAAAIBUAAAAAAAAgFQAACgoKCgoKCgoKCgoKCgoKCgoKCgoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICphcmdzLCAqKmt3YXJncywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF9fbmFtZV9fLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi50ZXN0LnBhdGhzLmxvZ0RpciwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNlbGYudGVzdC5wYXRocy5sb2dOYW1lLAogICAgICAgICAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgICAgICBtc2cgPSAnQ2FuY2VsbGVkJwogICAgICAgICAgICAgICAgICAgIG1zZyA9ICdGaW5pc2hlZCcKICAgICAgICAgICAgICAgICAgICByYWlzZSBJT0Vycm9yKCdFT0YnKQogICAgICAgICAgICAgICAgICAgIHJhaXNlIElPRXJyb3IoJ0VPRicpCiAgICAgICAgICAgICAgICAjIGRhdGEgbWF5IGNvbnRhaW4gcGFydCBvZiBhIG11bHRpYnl0ZSBjaGFyCiAgICAgICAgICAgICAgICAjIElmIGV4YWN0bHkgdGhlIHJlcXVlc3RlZCBudW1iZXIgb2YgYnl0ZXMgd2FzCiAgICAgICAgICAgICAgICAjIHJhdGhlciB0aGFuIGEgZnV0dXJlIChtdXRhdGVkKSB2ZXJzaW9uCiAgICAgICAgICAgICAgICAjIHJlYWQsIHRoZXJlIG1heSBiZSBtb3JlIGRhdGEsIGFuZCB0aGUgY3VycmVudAogICAgICAgICAgICAgICAgIyB0aW1lb3V0IGdldHMgdGhlIHZhbHVlIG9mIG91dCByaWdodCBub3csCiAgICAgICAgICAgICAgICAjIFdlIHBhc3Mgb3V0IHRvIGEgZnVuY3Rpb24gdG8gZW5zdXJlIHRoZQogICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICBCdWlsZFNjb2xsVG9wQ29tbWFuZChzZWxmLndpbmRvdykucnVuKCkKICAgICAgICAgICAgICAgIGRhdGEgPSBvcy5yZWFkKGhhbmRsZS5maWxlbm8oKSwgY2h1bmtfc2l6ZSkKICAgICAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICBpZiBkYXRhID09IGInJyBhbmQgb3V0ID09IGInJzoKICAgICAgICAgICAgICAgIGlmIGRhdGEgPT0gYicnOgogICAgICAgICAgICAgICAgaWYgbGVuKGRhdGEpID09IGNodW5rX3NpemU6CiAgICAgICAgICAgICAgICBpZiBzZWxmLmtpbGxlZDoKICAgICAgICAgICAgICAgIG1zZyA9ICdFcnJvciBkZWNvZGluZyBvdXRwdXQgdXNpbmcgJXMgLSAlcycKICAgICAgICAgICAgICAgIG91dCArPSBkYXRhCiAgICAgICAgICAgICAgICBvdXQgPSBiJycKICAgICAgICAgICAgICAgIHNlbGYua2lsbGVkID0gVHJ1ZQogICAgICAgICAgICAgICAgc2VsZi5wcm9jLnRlcm1pbmF0ZSgpCiAgICAgICAgICAgICAgICBzZWxmLnF1ZXVlX3dyaXRlKCdcblslc10nICUgbXNnKQogICAgICAgICAgICAgICAgc2VsZi5xdWV1ZV93cml0ZShtc2cgICUgKCd1dGYtOCcsIHN0cihlKSkpCiAgICAgICAgICAgICAgICBzZWxmLnF1ZXVlX3dyaXRlKG91dC5kZWNvZGUoJ3V0Zi04JykpCiAgICAgICAgICAgICMgQ3JlYXRpbmcgdGhlIHBhbmVsIGltcGxpY2l0bHkgY2xlYXJzIGFueSBwcmV2aW91cyBjb250ZW50cwogICAgICAgICAgICAjIGlmIG5vIGxvZ2dlciBleGlzdHMsIHRoZW4gY2F1c2luZyBlcnJvciBtZXNzYWdlcyBhcmUgYWRkZWQgdG8gb3V0cHV0CiAgICAgICAgICAgICMgbG9nIHdpbGwgYWx3YXlzIGNvbnRhaW4gc2VsZi52YXJzIGFzIHNwZWNpZmllZCBpbiB0ZXN0b3BpYS5zdWJsaW1lLWJ1aWxkIGZpbGUKICAgICAgICAgICAgZXhjZXB0IChJT0Vycm9yKSBhcyBlOgogICAgICAgICAgICBleGNlcHQgKFVuaWNvZGVEZWNvZGVFcnJvcikgYXMgZToKICAgICAgICAgICAgaWYgc2VsZi5wcm9jOgogICAgICAgICAgICBsb2dnZXIubWFuYWdlX2xvZ3Moc2VsZi50ZXN0LnBhdGhzLmxvZ0RpciwgKmFyZ3MsICoqa3dhcmdzKQogICAgICAgICAgICBtc2cgPSAnXG4nLmpvaW4oc2VsZi50ZXN0Lm1zZykgKyAnXG4nLmpvaW4oc2VsZi50ZXN0LmV4ZWN1dGFibGUubXNnKQogICAgICAgICAgICByZXR1cm4KICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIHJldHVybiBzZWxmLnByb2MgaXMgbm90IE5vbmUgYW5kIHNlbGYucHJvYy5wb2xsKCkgaXMgTm9uZQogICAgICAgICAgICBzZWxmLmxvZyA9IGxvZ2dlci5ta19sb2dnZXIoCiAgICAgICAgICAgIHNlbGYubG9nLmluZm8oJ1xuJyArICdcbicuam9pbihbZiJ2YXIge2t9Olx0e3Z9IiBmb3IgaywgdiBpbiBzZWxmLnZhcnMuaXRlbXMoKV0pKQogICAgICAgICAgICBzZWxmLmxvZy5pbmZvKHRleHQpCiAgICAgICAgICAgIHNlbGYucGFuZWwgPSBzZWxmLndpbmRvdy5jcmVhdGVfb3V0cHV0X3BhbmVsKCdleGVjJykKICAgICAgICAgICAgc2VsZi5wYW5lbC5ydW5fY29tbWFuZCgnYXBwZW5kJywgeydjaGFyYWN0ZXJzJzogdGV4dH0pCiAgICAgICAgICAgIHNlbGYucHJvYyA9IE5vbmUKICAgICAgICAgICAgc2VsZi5wcm9jLnRlcm1pbmF0ZSgpCiAgICAgICAgICAgIHNlbGYud2luZG93LnJ1bl9jb21tYW5kKCdzaG93X3BhbmVsJywgeydwYW5lbCc6ICdvdXRwdXQuZXhlYyd9KQogICAgICAgICAgICBzZXR0aW5ncyA9IHNlbGYucGFuZWwuc2V0dGluZ3MoKQogICAgICAgICAgICBzZXR0aW5ncy5zZXQoJ3Jlc3VsdF9iYXNlX2RpcicsIHNlbGYudmFycy5nZXQoJ2ZvbGRlcicpKQogICAgICAgICAgICBzZXR0aW5ncy5zZXQoJ3Jlc3VsdF9maWxlX3JlZ2V4JywgcideRmlsZSAiKFteIl0rKSIgbGluZSAoXGQrKSBjb2wgKFxkKyknKQogICAgICAgICAgICBzZXR0aW5ncy5zZXQoJ3Jlc3VsdF9saW5lX3JlZ2V4JywgcideXHMrbGluZSAoXGQrKSBjb2wgKFxkKyknKQogICAgICAgICAgICBzdWJsaW1lLnNldF90aW1lb3V0KGxhbWJkYTogc2VsZi5kb193cml0ZShtc2cpLCAxKQogICAgICAgICAgICB0cnk6CiAgICAgICAgIiIiCiAgICAgICAgIiIiCiAgICAgICAgIyBBIGxvY2sgaXMgdXNlZCB0byBlbnN1cmUgb25seSBvbmUgdGhyZWFkIGlzCiAgICAgICAgIyB0ZXN0IGlzIHJ1biBoZXJlIGFuZCByZXN1bHRzIGFyZSBwcmVwYXJlZCBmb3Igb3V0cHV0CiAgICAgICAgIyBUaGUgQ2FuY2VsIGJ1aWxkIG9wdGlvbiBzaG91bGQgb25seSBiZSBhdmFpbGFibGUKICAgICAgICAjIHRvdWNoaW5nIHRoZSBvdXRwdXQgcGFuZWwgYXQgYSB0aW1lCiAgICAgICAgIyB3aGVuIHRoZSBwcm9jZXNzIGlzIHN0aWxsIHJ1bm5pbmcKICAgICAgICBjaHVua19zaXplID0gMiAqKiAxMwogICAgICAgIGV4Y2VwdDoKICAgICAgICBpZiBoYXNhdHRyKHNlbGYudGVzdC5wYXRocywgJ2xvZ0RpcicpOgogICAgICAgIGlmIGtpbGw6CiAgICAgICAgaWYga2lsbDoKICAgICAgICBpZiBub3QgdjoKICAgICAgICBpZiBzZWxmLnByb2MgaXMgbm90IE5vbmU6CiAgICAgICAgbWFpbiBmdW5jdGlvbiB0aGF0IGlzIGNhbGxlZCB3aGVuIHRoZSBidWlsZCBzeXN0ZW0gaXMgcnVuCiAgICAgICAgb3V0ID0gYicnCiAgICAgICAgcGF0aCA9IG9zLnBhdGguam9pbihvcy5nZXRjd2QoKSwgcGF0aFsyOl0pLnJlcGxhY2UoIi8iLCBvcy5zZXApCiAgICAgICAgcmV0dXJuIFRydWUKICAgICAgICByZXR1cm4gdmFycwogICAgICAgIHJ1bnMgdGhlIHRlc3RzIGFuIGRpc3BsYXlzIHRoZSByZXN1bHRzCiAgICAgICAgc2VsZi5raWxsZWQgPSBGYWxzZQogICAgICAgIHNlbGYub3V0TXNnID0gJycKICAgICAgICBzZWxmLnBhbmVsID0gTm9uZQogICAgICAgIHNlbGYucGFuZWxfbG9jayA9IHRocmVhZGluZy5Mb2NrKCkKICAgICAgICBzZWxmLnByZXBfbG9nZ2luZygqYXJncywgKiprd2FyZ3MpCiAgICAgICAgc2VsZi5wcmVwX3Rlc3RpbmcoKmFyZ3MsICoqa3dhcmdzKQogICAgICAgIHNlbGYucHJvYyA9IE5vbmUKICAgICAgICBzZWxmLnByb2MsIHNlbGYua2lsbCA9IHNlbGYudGVzdC5ydW5fdGVzdChzZWxmLmxvZywgKmFyZ3MsICoqa3dhcmdzKQogICAgICAgIHNlbGYudGVzdCA9IHRlc3RvcGlhLlRlc3RvcGlhKHNlbGYudmFycywgKmFyZ3MsICoqa3dhcmdzKQogICAgICAgIHNlbGYudmFycyA9IHNlbGYuZ2V0X3ZhcnMoKQogICAgICAgIHN1YmxpbWUuc2V0X3RpbWVvdXQobGFtYmRhOiBzZWxmLmRvX3dyaXRlKHRleHQpLCAxKQogICAgICAgIHN1cGVyKCkuX19pbml0X18oKmFyZ3MsICoqa3dhcmdzKQogICAgICAgIHRocmVhZGluZy5UaHJlYWQodGFyZ2V0PXNlbGYucmVhZF9oYW5kbGUsIGFyZ3M9KHNlbGYucHJvYy5zdGRvdXQsICkgKS5zdGFydCgpCiAgICAgICAgdHJ5OgogICAgICAgIHYgPSBzZWxmLndpbmRvdy5maW5kX291dHB1dF9wYW5lbCgiZXhlYyIpCiAgICAgICAgdi5ydW5fY29tbWFuZCgibW92ZV90byIsIHsidG8iOiAiYm9mIn0pCiAgICAgICAgdmFycyA9IHNlbGYud2luZG93LmV4dHJhY3RfdmFyaWFibGVzKCkKICAgICAgICB2YXJzWydzZWxlY3Rpb25UZXh0cyddID0ge3R1cGxlKHQpOiB2aWV3LnN1YnN0cih0KSBmb3IgdCBpbiB2aWV3LnNlbCgpfQogICAgICAgIHZpZXcgPSBzZWxmLndpbmRvdy5hY3RpdmVfdmlldygpCiAgICAgICAgd2hpbGUgVHJ1ZToKICAgICAgICB3aXRoIHNlbGYucGFuZWxfbG9jazoKICAgICAgICB3aXRoIHNlbGYucGFuZWxfbG9jazoKICAgIGRlZiBfX2luaXRfXyhzZWxmLCAqYXJncywgKiprd2FyZ3MpOgogICAgZGVmIGRvX3dyaXRlKHNlbGYsIHRleHQpOgogICAgZGVmIGdldF92YXJzKHNlbGYsICphcmdzLCAqKmt3YXJncyk6CiAgICBkZWYgaXNfZW5hYmxlZChzZWxmLCAqYXJncywga2lsbD1GYWxzZSwgKiprd2FyZ3MpOgogICAgZGVmIHByZXBfbG9nZ2luZyhzZWxmLCAqYXJncywgKiprd2FyZ3MpOgogICAgZGVmIHByZXBfdGVzdGluZyhzZWxmLCAqYXJncywgKiprd2FyZ3MpOgogICAgZGVmIHF1ZXVlX3dyaXRlKHNlbGYsIHRleHQpOgogICAgZGVmIHJlYWRfaGFuZGxlKHNlbGYsIGhhbmRsZSk6CiAgICBkZWYgcnVuKHNlbGYpOgogICAgZGVmIHJ1bihzZWxmLCAqYXJncywga2lsbD1GYWxzZSwgKiprd2FyZ3MpOgogICAgaWYgcGF0aC5zdGFydHN3aXRoKCIuIik6CiAgICBwYXRoID0gcGF0aC5yZXBsYWNlKCJ+Iiwgb3MucGF0aC5leHBhbmR1c2VyKCJ+IikpCiAgICBwYXRoID0gcGF0aC5yZXBsYWNlKHIiJVVTRVJQUk9GSUxFJSIsICJ+IikKICAgIHJldHVybiBwYXRoCmNsYXNzIEJ1aWxkU2NvbGxUb3BDb21tYW5kKHN1YmxpbWVfcGx1Z2luLldpbmRvd0NvbW1hbmQpOgpjbGFzcyBVbml0VGVzdEJ1aWxkQ29tbWFuZChzdWJsaW1lX3BsdWdpbi5XaW5kb3dDb21tYW5kKToKZGVmIHVuYWxpYXNfcGF0aChwYXRoOiBzdHIpIC0+IHN0cjoKZnJvbSAuIGltcG9ydCBsb2dnZXIKZnJvbSAuIGltcG9ydCB0ZXN0b3BpYQppbXBvcnQgb3MsIHJlLCBzeXMsIHRpbWUKaW1wb3J0IHN1YmxpbWUKaW1wb3J0IHN1YmxpbWVfcGx1Z2luCmltcG9ydCB0aHJlYWRpbmc",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAACAVAAAAAAAAAAAAAAAA8L8"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 5408,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 231.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/lars/python_venvs/utils/testopia"
+	],
+	"file_history":
+	[
+		"/C/Users/lars/python_venvs/utils/testopia/Readme.md",
+		"/C/Users/lars/python_venvs/modules/os_setup/droplet/configs/win_machines/Surface Pro 6.json",
+		"/C/Users/lars/python_venvs/modules/os_setup/droplet/configs/win_machines/MS-7885.json",
+		"/C/Users/lars/python_venvs/modules/os_setup/droplet/configs/win_machines/Predator PH317-53.json",
+		"/D/download_from_onedrive/ssh",
+		"/D/download_from_onedrive/userconfig.txt",
+		"/C/Users/lars/python_venvs/admindesk/launch_home_windows.pyw",
+		"/C/Users/lars/python_venvs/modules/os_setup/sequences/services_installs.yml",
+		"/C/Users/lars/python_venvs/modules/os_setup/sequences/pyenv_installs.yml",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0060_all_installs.sh",
+		"/C/Users/lars/AppData/Local/Temp/xw8eYZ5fJs/cluster_params.yml",
+		"/C/Users/lars/python_venvs/modules/os_setup/droplet/configs/lin_machines/logunittest.json",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/python/040_pyenv_user_params.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/python/020_pythons_install.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/python/030_pipenv_install.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/testing_all.ps1",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/dockerizer_build_all.ps1",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0010_base_installs.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0030_server_installs.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0050_base_server_installs.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0000_droplet_installs.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0003_python_installs.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/workflows/l_0005_user_installs.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/docker_entrypoint.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/l_0140_pipenv_installs_packages.sh",
+		"/C/Users/lars/AppData/Local/Temp/roaXBV020vQ/cluster_params.yml",
+		"/C/Users/lars/AppData/Local/Temp/udFKO2J7m7Q/cluster_params.yml",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/python/010_pyenv_install.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/l_0060_ssh_config.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/pipenv_testing.ps1",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/dos2unix.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/l_0050_create_user.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/l_0083_set_base_py_params.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/l_0040_system_updates.sh",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/macros/arithmetic.sublime-macro",
+		"/C/temp/pythons_install_ubuntu_mess/010_pyenv_install.sh",
+		"/C/Users/lars/AppData/Roaming/Microsoft/Windows/PowerShell/PSReadLine/ConsoleHost_history.txt",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/snippets/shell/sh_sudo_with_passwd.sublime-snippet",
+		"/C/temp/pythons_install_ubuntu_mess/030_pipenv_install.sh",
+		"/C/temp/pythons_install_ubuntu_mess/020_pythons_install.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/s_0275_gitlab-runner_in_docker.ps1",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/git_pull_os_setup_dockerizer.ps1",
+		"/C/Users/lars/python_venvs/packages/logunittest/.gitlab-ci.yml",
+		"/?wsl$/docker-desktop-data/data/docker/volumes/gitlab-runner-config/_data/config.toml",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/l_0122_pythons_install.sh",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/snippets/shell/sh_loop_files.sublime-snippet",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/snippets/shell/ps_loop_files_folders.sublime-snippet",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/init_joringels.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/linux/apache_restart.sh",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/python_files/get_tensorflow_versions.py",
+		"/C/Users/lars/OneDrive/Desktop/workspaces.txt",
+		"/C/Users/lars/OneDrive/Desktop/sublime_install.txt",
+		"/C/Users/lars/python_venvs/modules/os_setup/windows/s_0280_windows_registry.ps1",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/youtube.sublime-build",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/testopia.sublime-build",
+		"/C/Users/lars/AppData/Roaming/Sublime Text/Packages/User/sass.sublime-build",
+		"/C/Users/lars/python_venvs/libs/joringels/Pipfile.save",
+		"/C/Users/lars/OneDrive/Desktop/output.json",
+		"/C/Users/lars/python_venvs/modules/os_setup/Readme.md",
+		"/C/Users/lars/python_venvs/utils/experimental/01_20_2023__10_29_00_ws_remove.py"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"walk",
+			"oneDrive",
+			"\\",
+			"LOGUNITTEST",
+			"JORINGELSPATH",
+			"base_installs",
+			"l_0010_base_installs",
+			"list_images",
+			"cd",
+			"jq.*available",
+			"available_apps",
+			"pip install \\-\\-upgrade setuptools",
+			"update_repo",
+			"updating using git pull",
+			"digiserver",
+			"l_0090_mk_base_dirs.sh",
+			"l_0090_mk_base_dirs",
+			"~/python_venvs",
+			"UPDATE",
+			"echo -e ",
+			"040_pyenv_user_params",
+			"l_0005_user_installs",
+			"install_os_setup",
+			", USERNAME:root",
+			"docker_all_installs",
+			"dockerfile_pre_installs",
+			"echo.*cd.*python_venvs",
+			"cd.*python_venvs",
+			"11",
+			"PYENV_ROOT",
+			"$HOME/.pyenv/bin",
+			"$HOME/.pyenv",
+			"000_all_install.sh",
+			"sh_sudo_with_passwd",
+			"python",
+			"workspace/myproject/bin",
+			"bashrc",
+			".pyenv/bin",
+			"$PATH",
+			"pyenv",
+			"file",
+			"[1]",
+			"PARAM",
+			"gitlab/gitlab-runner",
+			"privileged",
+			"\\",
+			"s_0270_app_docker_update",
+			"l_0120_pythons_install",
+			"RMBASEDIR",
+			"$",
+			"\\",
+			"bash",
+			"dos2unix",
+			"list_images",
+			"git_pull_us_setup_dockerizer",
+			"for_loop_test",
+			"dockerizer",
+			"$testlog",
+			"$productName_$clusterName",
+			"$Config",
+			"Config",
+			"clusterPath",
+			"$dockerizerPath/dockerizer/products/$productName/$productName_$clusterName",
+			"dockerizerPath",
+			"$culster",
+			"culster"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			" "
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "testopia.py",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 14947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"copilot.completion.is_visible": false,
+							"copilot.completion.is_visible_panel_completions": false,
+							"copilot.completion.is_waiting_completion": false,
+							"copilot.completion.is_waiting_panel_completions": false,
+							"copilot.completion.original_layout": null,
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/Users/lars/python_venvs/utils/testopia/testopia.py",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "unit_test_build.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5408,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"copilot.completion._is_modified": true,
+							"copilot.completion.completion_index": 0,
+							"copilot.completion.completion_style": "popup",
+							"copilot.completion.completions":
+							[
+								{
+									"displayText": "import subprocess",
+									"docVersion": 2,
+									"point": 37,
+									"position":
+									{
+										"character": 0,
+										"line": 2
+									},
+									"range":
+									{
+										"end":
+										{
+											"character": 0,
+											"line": 2
+										},
+										"start":
+										{
+											"character": 0,
+											"line": 2
+										}
+									},
+									"region":
+									[
+										37,
+										37
+									],
+									"text": "import subprocess",
+									"uuid": "53b919d6-5dce-49a2-9313-f835005426b2"
+								}
+							],
+							"copilot.completion.is_visible": false,
+							"copilot.completion.is_visible_panel_completions": false,
+							"copilot.completion.is_waiting_completion": false,
+							"copilot.completion.is_waiting_panel_completions": false,
+							"copilot.completion.original_layout": null,
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/Users/lars/python_venvs/utils/testopia/unit_test_build.py",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 264.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "testopia.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "log",
+		"selected_items":
+		[
+			[
+				"log",
+				"C:\\Users\\lars\\python_venvs\\packages\\logunittest\\ws_lut.sublime-workspace"
+			],
+			[
+				"lut",
+				"C:\\Users\\lars\\python_venvs\\packages\\logunittest\\ws_lut.sublime-workspace"
+			],
+			[
+				"",
+				"C:\\Users\\lars\\python_venvs\\modules\\os_setup\\windows\\ws_win.sublime-workspace"
+			],
+			[
+				"li",
+				"C:\\Users\\lars\\python_venvs\\modules\\os_setup\\ws_os_setup_linux.sublime-workspace"
+			],
+			[
+				"doz",
+				"C:\\Users\\lars\\python_venvs\\packages\\dockerizer\\ws_doz.sublime-workspace"
+			],
+			[
+				"do",
+				"C:\\Users\\lars\\python_venvs\\packages\\dockerizer\\ws_doz.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 367.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

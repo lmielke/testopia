@@ -9,7 +9,7 @@ from collections import defaultdict
 
 # used to find all methods/functions in a file
 funcRegex = r"(def\s+)([A-Za-z_0-9]*)(.*[)])(?:[ ->]*)(.*)(?=:\s*)"
-classRegex = r'(?:class\s*)([a-z_A-Z0-9]*)'
+classRegex = r'(?:^class\s*)([a-z_A-Z0-9]*)'
 
 class Testopia:
 
